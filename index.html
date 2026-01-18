@@ -35,13 +35,16 @@
             color: #1D1D1F;
         }
         .glass-card {
-            background: white;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .vehicle-card:hover {
-            transform: translateY(-2px);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 122, 255, 0.3);
         }
         .img-container img {
             object-fit: contain;
@@ -71,163 +74,207 @@
     <div class="bg-shape bg-amber-100 w-48 h-48 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-40"></div>
     
     <!-- Header Section -->
-    <header class="max-w-4xl mx-auto text-right mb-8 md:mb-12 px-2">
-        <h1 class="text-4xl font-extrabold text-lok-dark-gray mb-2">קריאטיב א' - סושי</h1>
-        <p class="text-lg text-gray-500 font-medium">כמות רכבים: 5</p>
+    <header class="max-w-6xl mx-auto text-center mb-12 md:mb-16 px-4 pt-8">
+        <div class="inline-block mb-4 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-lok-primary font-bold text-sm tracking-wide">
+            פרויקט מיתוג רכבים
+        </div>
+        <h1 class="text-5xl md:text-6xl font-black text-lok-dark-gray mb-4 tracking-tight">קריאטיב א' - סושי</h1>
+        <p class="text-xl text-gray-500 font-medium">סה"כ רכבים בפרויקט: <span class="font-bold text-lok-dark-gray">5</span></p>
     </header>
 
-    <main class="max-w-4xl mx-auto space-y-12">
+    <main class="max-w-6xl mx-auto space-y-16 px-2">
         
         <!-- Ad Design Section -->
-        <section class="glass-card rounded-3xl p-6 md:p-10 text-center">
-            <h2 class="text-2xl font-bold mb-6 border-b pb-4">עיצוב המודעה</h2>
-            <div class="max-w-md mx-auto mb-8">
-                <img src="poto/Oshioshi A_.png" alt="עיצוב המודעה" class="w-full rounded-2xl shadow-lg border border-gray-100">
-            </div>
+        <section class="glass-card rounded-[2rem] p-8 md:p-12 relative overflow-hidden group">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-lok-primary to-blue-400"></div>
             
-            <div class="flex flex-col items-center gap-4 bg-blue-50 p-6 rounded-2xl border border-blue-100">
-                <span class="text-lg font-semibold text-blue-900">המודעה תוביל אל העמוד נחיתה</span>
-                <a href="https://www.l00k.net/he/landing-page/oshi-oshi" target="_blank" class="flex items-center gap-2 bg-lok-primary text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-600 transition-colors shadow-md">
-                    <i class="fas fa-external-link-alt"></i>
-                    קישור לעמוד
-                </a>
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="flex-1 text-center md:text-right space-y-6">
+                    <h2 class="text-3xl font-bold text-gray-900">עיצוב המודעה הראשית</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        העיצוב הנבחר למיתוג צי הרכבים. המודעה כוללת QR Code המוביל ישירות לעמוד הנחיתה הייעודי.
+                    </p>
+                    
+                    <div class="inline-flex flex-col sm:flex-row items-center gap-4 bg-blue-50/80 p-2 pr-6 rounded-2xl border border-blue-100 mt-4">
+                        <span class="font-bold text-blue-900">יעד המודעה:</span>
+                        <a href="https://www.l00k.net/he/landing-page/oshi-oshi" target="_blank" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-lok-primary text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-600 hover:shadow-lg hover:-translate-y-0.5 transition-all shadow-blue-200 shadow-md">
+                            <i class="fas fa-external-link-alt"></i>
+                            צפייה בעמוד נחיתה
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="flex-1 w-full max-w-lg perspective-1000">
+                    <img src="poto/Oshioshi A_.png" alt="עיצוב המודעה" class="w-full rounded-2xl shadow-2xl border-4 border-white transform transition-transform duration-500 group-hover:rotate-1 group-hover:scale-[1.02]">
+                </div>
             </div>
         </section>
 
         <!-- Vehicles List Section -->
         <section class="space-y-6">
-            <h2 class="text-2xl font-bold px-2">רכבים</h2>
+            <div class="flex items-center justify-between px-2">
+                <h2 class="text-3xl font-bold text-gray-900 border-r-4 border-lok-primary pr-4">צי הרכבים</h2>
+            </div>
             
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                
             <!-- Vehicle 1 -->
-            <div class="vehicle-card glass-card rounded-2xl p-4 md:p-6 flex flex-col md:flex-row gap-6 items-center relative overflow-hidden">
-                <div class="flex-1 flex flex-col gap-3 w-full">
-                    <h3 class="text-xl font-bold text-lok-primary">רכב "1738738"</h3>
-                    <div>
-                        <a href="https://www.look-crm.com/agent/show/ce3bc83f-aa02-40f3-bfb0-ead1b498b5be" class="inline-flex items-center gap-2 text-sm font-medium text-gray-600 bg-gray-50 hover:bg-white border border-gray-200 hover:border-lok-primary px-4 py-2 rounded-lg transition-all">
-                            <i class="fas fa-folder-open text-lok-primary"></i>
-                            קישור לתיק לקוח
-                        </a>
-                    </div>
+            <div class="vehicle-card glass-card rounded-3xl p-5 flex flex-col gap-5 relative overflow-hidden h-full">
+                <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+                    <h3 class="text-2xl font-black text-gray-800">1738738</h3>
+                    <span class="bg-gray-100 text-gray-600 text-xs font-bold px-2 py-1 rounded-md">SEAT</span>
                 </div>
-                <div class="flex gap-3 img-container">
-                    <img src="poto/gray_87.png" alt="הדמיה 1" class="w-40 h-32 md:w-64 md:h-48">
-                    <img src="poto/gray_873.png" alt="הדמיה 2" class="w-40 h-32 md:w-64 md:h-48">
+                
+                <div class="flex gap-2 img-container h-48">
+                    <img src="poto/gray_87.png" alt="הדמיה 1" class="w-1/2 h-full object-cover bg-gray-50 hover:scale-105 transition-transform duration-500">
+                    <img src="poto/gray_873.png" alt="הדמיה 2" class="w-1/2 h-full object-cover bg-gray-50 hover:scale-105 transition-transform duration-500">
+                </div>
+
+                <div class="mt-auto pt-2">
+                    <a href="https://www.look-crm.com/agent/show/ce3bc83f-aa02-40f3-bfb0-ead1b498b5be" class="w-full flex items-center justify-center gap-2 text-sm font-bold text-lok-primary bg-blue-50 hover:bg-lok-primary hover:text-white border border-blue-100 px-4 py-3.5 rounded-xl transition-all duration-300 group">
+                        <span class="group-hover:ml-1 transition-all">קישור לתיק לקוח</span>
+                            <i class="fas fa-folder-open text-lok-primary"></i>
+                    </a>
                 </div>
             </div>
 
             <!-- Vehicle 2 -->
-            <div class="vehicle-card glass-card rounded-2xl p-4 md:p-6 flex flex-col md:flex-row gap-6 items-center relative overflow-hidden">
-                <div class="flex-1 flex flex-col gap-3 w-full">
-                    <h3 class="text-xl font-bold text-lok-primary">רכב "5707453"</h3>
-                    <div>
-                        <a href="#" class="inline-flex items-center gap-2 text-sm font-medium text-gray-600 bg-gray-50 hover:bg-white border border-gray-200 hover:border-lok-primary px-4 py-2 rounded-lg transition-all">
-                            <i class="fas fa-folder-open text-lok-primary"></i>
-                            של אבירם
-                        </a>
-                    </div>
+            <div class="vehicle-card glass-card rounded-3xl p-5 flex flex-col gap-5 relative overflow-hidden h-full">
+                <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+                    <h3 class="text-2xl font-black text-gray-800">5707453</h3>
+                    <span class="bg-gray-100 text-gray-600 text-xs font-bold px-2 py-1 rounded-md">AUDI</span>
                 </div>
-                <div class="flex gap-3 img-container">
-                    <img src="poto/white_74.png" alt="הדמיה 1" class="w-40 h-32 md:w-64 md:h-48">
-                    <img src="poto/white_745.png" alt="הדמיה 2" class="w-40 h-32 md:w-64 md:h-48">
+                
+                <div class="flex gap-2 img-container h-48">
+                    <img src="poto/white_74.png" alt="הדמיה 1" class="w-1/2 h-full object-cover bg-gray-50 hover:scale-105 transition-transform duration-500">
+                    <img src="poto/white_745.png" alt="הדמיה 2" class="w-1/2 h-full object-cover bg-gray-50 hover:scale-105 transition-transform duration-500">
+                </div>
+
+                <div class="mt-auto pt-2">
+                    <a href="#" class="w-full flex items-center justify-center gap-2 text-sm font-bold text-lok-primary bg-blue-50 hover:bg-lok-primary hover:text-white border border-blue-100 px-4 py-3.5 rounded-xl transition-all duration-300 group">
+                        <span class="group-hover:ml-1 transition-all">של אבירם</span>
+                            <i class="fas fa-folder-open text-lok-primary"></i>
+                    </a>
                 </div>
             </div>
 
             <!-- Vehicle 3 -->
-            <div class="vehicle-card glass-card rounded-2xl p-4 md:p-6 flex flex-col md:flex-row gap-6 items-center relative overflow-hidden">
-                <div class="flex-1 flex flex-col gap-3 w-full">
-                    <h3 class="text-xl font-bold text-lok-primary">רכב "377-87-602"</h3>
-                    <div>
-                        <a href="https://www.look-crm.com/agent/show/4df5abeb-bfdb-466c-8c85-3e3d8a1a8986" class="inline-flex items-center gap-2 text-sm font-medium text-gray-600 bg-gray-50 hover:bg-white border border-gray-200 hover:border-lok-primary px-4 py-2 rounded-lg transition-all">
-                            <i class="fas fa-folder-open text-lok-primary"></i>
-                            קישור לתיק לקוח
-                        </a>
-                    </div>
+            <div class="vehicle-card glass-card rounded-3xl p-5 flex flex-col gap-5 relative overflow-hidden h-full">
+                <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+                    <h3 class="text-2xl font-black text-gray-800">377-87-602</h3>
+                    <span class="bg-gray-100 text-gray-600 text-xs font-bold px-2 py-1 rounded-md">MAZDA</span>
                 </div>
-                <div class="flex gap-3 img-container">
-                    <img src="poto/gray_87_.png" alt="הדמיה 1" class="w-40 h-32 md:w-64 md:h-48">
-                    <img src="poto/gray_876.png" alt="הדמיה 2" class="w-40 h-32 md:w-64 md:h-48">
+                
+                <div class="flex gap-2 img-container h-48">
+                    <img src="poto/gray_87_.png" alt="הדמיה 1" class="w-1/2 h-full object-cover bg-gray-50 hover:scale-105 transition-transform duration-500">
+                    <img src="poto/gray_876.png" alt="הדמיה 2" class="w-1/2 h-full object-cover bg-gray-50 hover:scale-105 transition-transform duration-500">
+                </div>
+
+                <div class="mt-auto pt-2">
+                    <a href="https://www.look-crm.com/agent/show/4df5abeb-bfdb-466c-8c85-3e3d8a1a8986" class="w-full flex items-center justify-center gap-2 text-sm font-bold text-lok-primary bg-blue-50 hover:bg-lok-primary hover:text-white border border-blue-100 px-4 py-3.5 rounded-xl transition-all duration-300 group">
+                        <span class="group-hover:ml-1 transition-all">קישור לתיק לקוח</span>
+                            <i class="fas fa-folder-open text-lok-primary"></i>
+                    </a>
                 </div>
             </div>
 
             <!-- Vehicle 4 -->
-            <div class="vehicle-card glass-card rounded-2xl p-4 md:p-6 flex flex-col md:flex-row gap-6 items-center relative overflow-hidden">
-                <div class="flex-1 flex flex-col gap-3 w-full">
-                    <h3 class="text-xl font-bold text-lok-primary">רכב "39-613-901"</h3>
-                    <div>
-                        <a href="https://www.look-crm.com/agent/show/1ac64c55-7b52-49be-822e-bf256cfa41c0" class="inline-flex items-center gap-2 text-sm font-medium text-gray-600 bg-gray-50 hover:bg-white border border-gray-200 hover:border-lok-primary px-4 py-2 rounded-lg transition-all">
-                            <i class="fas fa-folder-open text-lok-primary"></i>
-                            קישור לתיק לקוח
-                        </a>
-                    </div>
+            <div class="vehicle-card glass-card rounded-3xl p-5 flex flex-col gap-5 relative overflow-hidden h-full">
+                <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+                    <h3 class="text-2xl font-black text-gray-800">39-613-901</h3>
+                    <span class="bg-gray-100 text-gray-600 text-xs font-bold px-2 py-1 rounded-md">SKODA</span>
                 </div>
-                <div class="flex gap-3 img-container">
-                    <img src="poto/black_613.png" alt="הדמיה 1" class="w-40 h-32 md:w-64 md:h-48">
-                    <img src="poto/black_6139.png" alt="הדמיה 2" class="w-40 h-32 md:w-64 md:h-48">
+                
+                <div class="flex gap-2 img-container h-48">
+                    <img src="poto/black_613.png" alt="הדמיה 1" class="w-1/2 h-full object-cover bg-gray-50 hover:scale-105 transition-transform duration-500">
+                    <img src="poto/black_6139.png" alt="הדמיה 2" class="w-1/2 h-full object-cover bg-gray-50 hover:scale-105 transition-transform duration-500">
+                </div>
+
+                <div class="mt-auto pt-2">
+                    <a href="https://www.look-crm.com/agent/show/1ac64c55-7b52-49be-822e-bf256cfa41c0" class="w-full flex items-center justify-center gap-2 text-sm font-bold text-lok-primary bg-blue-50 hover:bg-lok-primary hover:text-white border border-blue-100 px-4 py-3.5 rounded-xl transition-all duration-300 group">
+                        <span class="group-hover:ml-1 transition-all">קישור לתיק לקוח</span>
+                            <i class="fas fa-folder-open text-lok-primary"></i>
+                    </a>
                 </div>
             </div>
 
             <!-- Vehicle 5 -->
-            <div class="vehicle-card glass-card rounded-2xl p-4 md:p-6 flex flex-col md:flex-row gap-6 items-center relative overflow-hidden">
-                <div class="flex-1 flex flex-col gap-3 w-full">
-                    <h3 class="text-xl font-bold text-lok-primary">רכב "478-07-301"</h3>
-                    <div>
-                        <a href="https://www.look-crm.com/agent/show/7ee52e0e-c0af-415a-9e0a-88fb92d1e659" class="inline-flex items-center gap-2 text-sm font-medium text-gray-600 bg-gray-50 hover:bg-white border border-gray-200 hover:border-lok-primary px-4 py-2 rounded-lg transition-all">
+            <div class="vehicle-card glass-card rounded-3xl p-5 flex flex-col gap-5 relative overflow-hidden h-full">
+                <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+                    <h3 class="text-2xl font-black text-gray-800">478-07-301</h3>
+                    <span class="bg-gray-100 text-gray-600 text-xs font-bold px-2 py-1 rounded-md">CHEVROLET</span>
+                </div>
+                
+                <div class="flex gap-2 img-container h-48">
+                    <img src="poto/gray_807.png" alt="הדמיה 1" class="w-1/2 h-full object-cover bg-gray-50 hover:scale-105 transition-transform duration-500">
+                    <img src="poto/gray_8073.png" alt="הדמיה 2" class="w-1/2 h-full object-cover bg-gray-50 hover:scale-105 transition-transform duration-500">
+                </div>
+
+                <div class="mt-auto pt-2">
+                    <a href="https://www.look-crm.com/agent/show/7ee52e0e-c0af-415a-9e0a-88fb92d1e659" class="w-full flex items-center justify-center gap-2 text-sm font-bold text-lok-primary bg-blue-50 hover:bg-lok-primary hover:text-white border border-blue-100 px-4 py-3.5 rounded-xl transition-all duration-300 group">
+                        <span class="group-hover:ml-1 transition-all">קישור לתיק לקוח</span>
                             <i class="fas fa-folder-open text-lok-primary"></i>
-                            קישור לתיק לקוח
-                        </a>
-                    </div>
+                    </a>
                 </div>
-                <div class="flex gap-3 img-container">
-                    <img src="poto/gray_807.png" alt="הדמיה 1" class="w-40 h-32 md:w-64 md:h-48">
-                    <img src="poto/gray_8073.png" alt="הדמיה 2" class="w-40 h-32 md:w-64 md:h-48">
-                </div>
+            </div>
             </div>
 
         </section>
     </main>
 
     <!-- Project Status Section -->
-    <footer class="max-w-4xl mx-auto mt-20 mb-12 px-2">
-        <div class="bg-white/90 backdrop-blur-sm border-2 border-amber-100 rounded-3xl p-5 md:p-8 shadow-sm">
-            <div class="flex items-center gap-3 mb-6 text-amber-600 border-b border-amber-50 pb-4">
-                <i class="fas fa-clipboard-check text-2xl"></i>
-                <h3 class="text-xl font-bold">סטטוס פרויקט ודגשים לביצוע</h3>
+    <footer class="max-w-6xl mx-auto mt-24 mb-12 px-4">
+        <div class="bg-white/80 backdrop-blur-md border border-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            <!-- Decorative bg -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-amber-50 rounded-full blur-3xl -z-10 opacity-60"></div>
+            
+            <div class="flex items-center gap-4 mb-10">
+                <div class="bg-amber-100 p-3 rounded-2xl text-amber-600">
+                    <i class="fas fa-clipboard-check text-2xl"></i>
+                </div>
+                <h3 class="text-3xl font-black text-gray-800">סטטוס פרויקט ודגשים</h3>
             </div>
             
             <div class="grid md:grid-cols-2 gap-8 text-gray-700">
-                <div class="space-y-4">
-                    <div class="flex gap-3 items-start">
-                        <div class="mt-1 bg-amber-100 p-1.5 rounded-full">
-                            <i class="fas fa-exclamation text-[10px] text-amber-700"></i>
+                <div class="space-y-6">
+                    <!-- Status Item 1 -->
+                    <div class="flex gap-4 items-start bg-white p-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="mt-1 bg-amber-50 p-2 rounded-xl shrink-0">
+                            <i class="fas fa-exclamation text-sm text-amber-600"></i>
                         </div>
-                        <p class="text-base leading-relaxed">
-                            <span class="font-bold block text-gray-900">דפי נחיתה ומעבר:</span>
-                           עמוד המעבר כרגע עם טעינה ארוכה מאוד. העמוד נחיתה עם פרטים לא תקינים טלפון וכו', וכן.
-                        </p>
+                        <div>
+                            <span class="font-bold block text-gray-900 mb-1">דפי נחיתה ומעבר</span>
+                            <p class="text-sm leading-relaxed text-gray-600">עמוד המעבר כרגע עם טעינה ארוכה מאוד. העמוד נחיתה עם פרטים לא תקינים טלפון וכו', וכן.</p>
+                        </div>
                     </div>
-                    <div class="flex gap-3 items-start">
-                        <div class="mt-1 bg-amber-100 p-1.5 rounded-full">
-                            <i class="fas fa-exclamation text-[10px] text-amber-700"></i>
+                    
+                    <!-- Status Item 2 -->
+                    <div class="flex gap-4 items-start bg-white p-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="mt-1 bg-amber-50 p-2 rounded-xl shrink-0">
+                            <i class="fas fa-tag text-sm text-amber-600"></i>
                         </div>
-                        <p class="text-base leading-relaxed">
-                            <span class="font-bold block text-gray-900">קוד הנחה:</span>
-                            מנגנון קבלת קוד ההנחה לא הושלם ואין ישור קו בנושא.
-                        </p>
+                        <div>
+                            <span class="font-bold block text-gray-900 mb-1">קוד הנחה</span>
+                            <p class="text-sm leading-relaxed text-gray-600">מנגנון קבלת קוד ההנחה לא הושלם ואין ישור קו בנושא.</p>
+                        </div>
                     </div>
-                    <div class="flex gap-3 items-start">
-                        <div class="mt-1 bg-amber-100 p-1.5 rounded-full">
-                            <i class="fas fa-camera text-[10px] text-amber-700"></i>
+                    
+                    <!-- Status Item 3 -->
+                    <div class="flex gap-4 items-start bg-white p-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="mt-1 bg-amber-50 p-2 rounded-xl shrink-0">
+                            <i class="fas fa-camera text-sm text-amber-600"></i>
                         </div>
-                        <p class="text-base leading-relaxed">
-                            כדאי לצלם את הרכב לפני הדבקה ואחרי במטרה לוודא או לאתר נזקים כתוצאה מהדבקה.
-                        </p>
+                        <div>
+                            <span class="font-bold block text-gray-900 mb-1">תיעוד לפני ביצוע</span>
+                            <p class="text-sm leading-relaxed text-gray-600">כדאי לצלם את הרכב לפני הדבקה ואחרי במטרה לוודא או לאתר נזקים כתוצאה מהדבקה.</p>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="bg-gray-50 p-5 rounded-2xl border border-gray-100 flex items-center">
-                    <div class="flex gap-4 items-center">
-                        <i class="fas fa-chart-line text-3xl text-gray-300"></i>
-                        <p class="text-sm italic text-gray-500">
+                <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 flex flex-col justify-center h-full">
+                    <div class="flex gap-5 items-start">
+                        <i class="fas fa-chart-line text-4xl text-gray-300"></i>
+                        <p class="text-base italic text-gray-500 leading-relaxed">
                             נכון לכרגע אין "דשבורד נתונים" המציג את נתוני הסריקות, בנוסף לא בוצע שיחה על יעדיים ועל הנתונים הנאספים.
                         </p>
                     </div>
@@ -235,26 +282,28 @@
             </div>
 
             <!-- Sticking Recommendations Section -->
-            <div class="sticky-recommendation">
-                <div class="flex items-center gap-3 mb-4 text-red-600">
-                    <i class="fas fa-tools text-xl"></i>
-                    <h3 class="text-lg font-bold">המלצת הדבקה</h3>
+            <div class="sticky-recommendation mt-12 pt-10 border-t border-gray-100">
+                <div class="flex items-center gap-3 mb-6 text-red-600">
+                    <div class="bg-red-50 p-2 rounded-lg">
+                        <i class="fas fa-tools text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800">המלצת הדבקה</h3>
                 </div>
-                <div class="flex flex-col md:flex-row gap-8 items-center">
-                    <div class="md:w-1/2">
-                        <div class="bg-red-50 border-r-4 border-red-500 p-4 rounded-lg">
-                            <p class="text-lg font-semibold text-red-900 leading-relaxed">
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="md:w-1/2 h-full">
+                        <div class="bg-red-50 border-r-4 border-red-500 p-6 rounded-2xl h-full">
+                            <p class="text-lg font-medium text-red-900 leading-relaxed">
                                   החלקים הגדולים הם הבעייתים יותר, כדאי להתחיל את ההדבקה מהכיוון של אובייקט הסושי, ומומלץ להשתמש במדבקות הקודמות לניסיון לפני הדבקה .
                             </p>
                         </div>
                     </div>
                     <div class="md:w-1/2">
-                        <img src="poto/WhatsApp Image 2026-01-18 at 02.44.43.jpeg" alt="המלצות הדבקה" class="w-full rounded-xl shadow-md border border-gray-200">
+                        <img src="poto/WhatsApp Image 2026-01-18 at 02.44.43.jpeg" alt="המלצות הדבקה" class="w-full rounded-2xl shadow-lg border-4 border-white">
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-10">
-                <span class="text-2xl font-bold text-gray-300 tracking-widest">בהצלחה</span>
+            <div class="text-center mt-16">
+                <span class="text-4xl font-black text-gray-200 tracking-[0.2em] uppercase select-none">בהצלחה</span>
             </div>
         </div>
     </footer>
