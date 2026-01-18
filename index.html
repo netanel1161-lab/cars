@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>קריאטיב א' - סושי</title>
+    <link rel="icon" href="poto/logoatar.png" type="image/png">
+    
+    <!-- Scripts & Fonts based on your login.html -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'lok-primary': '#007AFF',
+                        'lok-dark-gray': '#1D1D1F',
+                        'lok-soft-gray': '#F7F8FA',
+                    },
+                    fontFamily: {
+                        sans: ['Assistant', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Assistant', sans-serif;
+            background-color: #F7F8FA;
+            color: #1D1D1F;
+        }
+        .glass-card {
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+        .vehicle-card:hover {
+            transform: translateY(-2px);
+        }
+        .img-container img {
+            object-fit: contain;
+            background: #fdfdfd;
+            border-radius: 0.75rem;
+            border: 1px solid #eee;
+        }
+        .sticky-recommendation {
+            border-top: 1px solid #fee2e2;
+            margin-top: 2rem;
+            padding-top: 2rem;
+        }
+        /* Background Shapes */
+        .bg-shape {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <!-- Geometric Background Shapes -->
+    <div class="bg-shape bg-blue-200 w-64 h-64 top-0 right-0 translate-x-1/3 -translate-y-1/3"></div>
+    <div class="bg-shape bg-purple-200 w-96 h-96 bottom-0 left-0 -translate-x-1/3 translate-y-1/3"></div>
+    <div class="bg-shape bg-amber-100 w-48 h-48 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-40"></div>
+    
+    <!-- Header Section -->
+    <header class="max-w-4xl mx-auto text-right mb-8 md:mb-12 px-2">
+        <h1 class="text-4xl font-extrabold text-lok-dark-gray mb-2">קריאטיב א' - סושי</h1>
+        <p class="text-lg text-gray-500 font-medium">כמות רכבים: 5</p>
+    </header>
+
+    <main class="max-w-4xl mx-auto space-y-12">
+        
+        <!-- Ad Design Section -->
+        <section class="glass-card rounded-3xl p-6 md:p-10 text-center">
+            <h2 class="text-2xl font-bold mb-6 border-b pb-4">עיצוב המודעה</h2>
+            <div class="max-w-md mx-auto mb-8">
+                <img src="poto/Oshioshi A_.png" alt="עיצוב המודעה" class="w-full rounded-2xl shadow-lg border border-gray-100">
+            </div>
+            
+            <div class="flex flex-col items-center gap-4 bg-blue-50 p-6 rounded-2xl border border-blue-100">
+                <span class="text-lg font-semibold text-blue-900">המודעה תוביל אל העמוד נחיתה</span>
+                <a href="https://www.l00k.net/he/landing-page/oshi-oshi" target="_blank" class="flex items-center gap-2 bg-lok-primary text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-600 transition-colors shadow-md">
+                    <i class="fas fa-external-link-alt"></i>
+                    קישור לעמוד
+                </a>
+            </div>
+        </section>
+
+        <!-- Vehicles List Section -->
+        <section class="space-y-6">
+            <h2 class="text-2xl font-bold px-2">רכבים</h2>
+            
+            <!-- Vehicle 1 -->
+            <div class="vehicle-card glass-card rounded-2xl p-4 md:p-6 flex flex-col md:flex-row gap-6 items-center relative overflow-hidden">
+                <div class="flex-1 flex flex-col gap-3 w-full">
+                    <h3 class="text-xl font-bold text-lok-primary">רכב "1738738"</h3>
+                    <div>
+                        <a href="https://www.look-crm.com/agent/show/ce3bc83f-aa02-40f3-bfb0-ead1b498b5be" class="inline-flex items-center gap-2 text-sm font-medium text-gray-600 bg-gray-50 hover:bg-white border border-gray-200 hover:border-lok-primary px-4 py-2 rounded-lg transition-all">
+                            <i class="fas fa-folder-open text-lok-primary"></i>
+                            קישור לתיק לקוח
+                        </a>
+                    </div>
+                </div>
+                <div class="flex gap-3 img-container">
+                    <img src="poto/gray_87.png" alt="הדמיה 1" class="w-40 h-32 md:w-64 md:h-48">
+                    <img src="poto/gray_873.png" alt="הדמיה 2" class="w-40 h-32 md:w-64 md:h-48">
+                </div>
+            </div>
+
+            <!-- Vehicle 2 -->
+            <div class="vehicle-card glass-card rounded-2xl p-4 md:p-6 flex flex-col md:flex-row gap-6 items-center relative overflow-hidden">
+                <div class="flex-1 flex flex-col gap-3 w-full">
+                    <h3 class="text-xl font-bold text-lok-primary">רכב "5707453"</h3>
+                    <div>
+                        <a href="#" class="inline-flex items-center gap-2 text-sm font-medium text-gray-600 bg-gray-50 hover:bg-white border border-gray-200 hover:border-lok-primary px-4 py-2 rounded-lg transition-all">
+                            <i class="fas fa-folder-open text-lok-primary"></i>
+                            של אבירם
+                        </a>
+                    </div>
+                </div>
+                <div class="flex gap-3 img-container">
+                    <img src="poto/white_74.png" alt="הדמיה 1" class="w-40 h-32 md:w-64 md:h-48">
+                    <img src="poto/white_745.png" alt="הדמיה 2" class="w-40 h-32 md:w-64 md:h-48">
+                </div>
+            </div>
+
+            <!-- Vehicle 3 -->
+            <div class="vehicle-card glass-card rounded-2xl p-4 md:p-6 flex flex-col md:flex-row gap-6 items-center relative overflow-hidden">
+                <div class="flex-1 flex flex-col gap-3 w-full">
+                    <h3 class="text-xl font-bold text-lok-primary">רכב "377-87-602"</h3>
+                    <div>
+                        <a href="https://www.look-crm.com/agent/show/4df5abeb-bfdb-466c-8c85-3e3d8a1a8986" class="inline-flex items-center gap-2 text-sm font-medium text-gray-600 bg-gray-50 hover:bg-white border border-gray-200 hover:border-lok-primary px-4 py-2 rounded-lg transition-all">
+                            <i class="fas fa-folder-open text-lok-primary"></i>
+                            קישור לתיק לקוח
+                        </a>
+                    </div>
+                </div>
+                <div class="flex gap-3 img-container">
+                    <img src="poto/gray_87_.png" alt="הדמיה 1" class="w-40 h-32 md:w-64 md:h-48">
+                    <img src="poto/gray_876.png" alt="הדמיה 2" class="w-40 h-32 md:w-64 md:h-48">
+                </div>
+            </div>
+
+            <!-- Vehicle 4 -->
+            <div class="vehicle-card glass-card rounded-2xl p-4 md:p-6 flex flex-col md:flex-row gap-6 items-center relative overflow-hidden">
+                <div class="flex-1 flex flex-col gap-3 w-full">
+                    <h3 class="text-xl font-bold text-lok-primary">רכב "39-613-901"</h3>
+                    <div>
+                        <a href="https://www.look-crm.com/agent/show/1ac64c55-7b52-49be-822e-bf256cfa41c0" class="inline-flex items-center gap-2 text-sm font-medium text-gray-600 bg-gray-50 hover:bg-white border border-gray-200 hover:border-lok-primary px-4 py-2 rounded-lg transition-all">
+                            <i class="fas fa-folder-open text-lok-primary"></i>
+                            קישור לתיק לקוח
+                        </a>
+                    </div>
+                </div>
+                <div class="flex gap-3 img-container">
+                    <img src="poto/black_613.png" alt="הדמיה 1" class="w-40 h-32 md:w-64 md:h-48">
+                    <img src="poto/black_6139.png" alt="הדמיה 2" class="w-40 h-32 md:w-64 md:h-48">
+                </div>
+            </div>
+
+            <!-- Vehicle 5 -->
+            <div class="vehicle-card glass-card rounded-2xl p-4 md:p-6 flex flex-col md:flex-row gap-6 items-center relative overflow-hidden">
+                <div class="flex-1 flex flex-col gap-3 w-full">
+                    <h3 class="text-xl font-bold text-lok-primary">רכב "478-07-301"</h3>
+                    <div>
+                        <a href="https://www.look-crm.com/agent/show/7ee52e0e-c0af-415a-9e0a-88fb92d1e659" class="inline-flex items-center gap-2 text-sm font-medium text-gray-600 bg-gray-50 hover:bg-white border border-gray-200 hover:border-lok-primary px-4 py-2 rounded-lg transition-all">
+                            <i class="fas fa-folder-open text-lok-primary"></i>
+                            קישור לתיק לקוח
+                        </a>
+                    </div>
+                </div>
+                <div class="flex gap-3 img-container">
+                    <img src="poto/gray_807.png" alt="הדמיה 1" class="w-40 h-32 md:w-64 md:h-48">
+                    <img src="poto/gray_8073.png" alt="הדמיה 2" class="w-40 h-32 md:w-64 md:h-48">
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Project Status Section -->
+    <footer class="max-w-4xl mx-auto mt-20 mb-12 px-2">
+        <div class="bg-white/90 backdrop-blur-sm border-2 border-amber-100 rounded-3xl p-5 md:p-8 shadow-sm">
+            <div class="flex items-center gap-3 mb-6 text-amber-600 border-b border-amber-50 pb-4">
+                <i class="fas fa-clipboard-check text-2xl"></i>
+                <h3 class="text-xl font-bold">סטטוס פרויקט ודגשים לביצוע</h3>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 text-gray-700">
+                <div class="space-y-4">
+                    <div class="flex gap-3 items-start">
+                        <div class="mt-1 bg-amber-100 p-1.5 rounded-full">
+                            <i class="fas fa-exclamation text-[10px] text-amber-700"></i>
+                        </div>
+                        <p class="text-base leading-relaxed">
+                            <span class="font-bold block text-gray-900">דפי נחיתה ומעבר:</span>
+                           עמוד המעבר כרגע עם טעינה ארוכה מאוד. העמוד נחיתה עם פרטים לא תקינים טלפון וכו', וכן.
+                        </p>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="mt-1 bg-amber-100 p-1.5 rounded-full">
+                            <i class="fas fa-exclamation text-[10px] text-amber-700"></i>
+                        </div>
+                        <p class="text-base leading-relaxed">
+                            <span class="font-bold block text-gray-900">קוד הנחה:</span>
+                            מנגנון קבלת קוד ההנחה לא הושלם ואין ישור קו בנושא.
+                        </p>
+                    </div>
+                    <div class="flex gap-3 items-start">
+                        <div class="mt-1 bg-amber-100 p-1.5 rounded-full">
+                            <i class="fas fa-camera text-[10px] text-amber-700"></i>
+                        </div>
+                        <p class="text-base leading-relaxed">
+                            כדאי לצלם את הרכב לפני הדבקה ואחרי במטרה לוודא או לאתר נזקים כתוצאה מהדבקה.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-5 rounded-2xl border border-gray-100 flex items-center">
+                    <div class="flex gap-4 items-center">
+                        <i class="fas fa-chart-line text-3xl text-gray-300"></i>
+                        <p class="text-sm italic text-gray-500">
+                            נכון לכרגע אין "דשבורד נתונים" המציג את נתוני הסריקות, בנוסף לא בוצע שיחה על יעדיים ועל הנתונים הנאספים.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sticking Recommendations Section -->
+            <div class="sticky-recommendation">
+                <div class="flex items-center gap-3 mb-4 text-red-600">
+                    <i class="fas fa-tools text-xl"></i>
+                    <h3 class="text-lg font-bold">המלצת הדבקה</h3>
+                </div>
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="md:w-1/2">
+                        <div class="bg-red-50 border-r-4 border-red-500 p-4 rounded-lg">
+                            <p class="text-lg font-semibold text-red-900 leading-relaxed">
+                                  החלקים הגדולים הם הבעייתים יותר, כדאי להתחיל את ההדבקה מהכיוון של אובייקט הסושי, ומומלץ להשתמש במדבקות הקודמות לניסיון לפני הדבקה .
+                            </p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="poto/WhatsApp Image 2026-01-18 at 02.44.43.jpeg" alt="המלצות הדבקה" class="w-full rounded-xl shadow-md border border-gray-200">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <span class="text-2xl font-bold text-gray-300 tracking-widest">בהצלחה</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
