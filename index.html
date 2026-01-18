@@ -259,5 +259,86 @@
         </div>
     </footer>
 
+    <!-- Image Preview Modal -->
+    <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300">
+        <!-- Close Button -->
+        <button onclick="closeModal()" class="absolute top-6 left-6 text-white/80 hover:text-white z-50 p-2 transition-colors">
+            <i class="fas fa-times text-4xl"></i>
+        </button>
+
+        <!-- Navigation Buttons -->
+        <button onclick="nextImage(event)" class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/70 hover:text-white z-50 p-4 hover:bg-white/10 rounded-full transition-all">
+            <i class="fas fa-chevron-left text-4xl"></i>
+        </button>
+        <button onclick="prevImage(event)" class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/70 hover:text-white z-50 p-4 hover:bg-white/10 rounded-full transition-all">
+            <i class="fas fa-chevron-right text-4xl"></i>
+        </button>
+
+        <!-- Image -->
+        <img id="modalImage" src="" alt="Preview" class="max-h-[85vh] max-w-[90vw] object-contain rounded-lg shadow-2xl select-none">
+        
+        <!-- Counter -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/80 font-medium tracking-widest bg-black/50 px-4 py-1 rounded-full text-sm">
+            <span id="currentImageIndex">1</span> / <span id="totalImages">10</span>
+        </div>
+    </div>
+
+    <script>
+        const images = Array.from(document.querySelectorAll('.img-container img'));
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const currentIndexSpan = document.getElementById('currentImageIndex');
+        const totalImagesSpan = document.getElementById('totalImages');
+        let currentIndex = 0;
+
+        if(totalImagesSpan) totalImagesSpan.textContent = images.length;
+
+        images.forEach((img, index) => {
+            img.classList.add('cursor-pointer', 'hover:opacity-90', 'transition-opacity');
+            img.onclick = () => openModal(index);
+        });
+
+        function openModal(index) {
+            currentIndex = index;
+            updateModalImage();
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        function updateModalImage() {
+            if(images[currentIndex]) {
+                modalImg.src = images[currentIndex].src;
+                if(currentIndexSpan) currentIndexSpan.textContent = currentIndex + 1;
+            }
+        }
+
+        function nextImage(e) {
+            if(e) e.stopPropagation();
+            currentIndex = (currentIndex + 1) % images.length;
+            updateModalImage();
+        }
+
+        function prevImage(e) {
+            if(e) e.stopPropagation();
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateModalImage();
+        }
+
+        modal.onclick = (e) => {
+            if (e.target === modal) closeModal();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (modal.classList.contains('hidden')) return;
+            if (e.key === 'Escape') closeModal();
+            if (e.key === 'ArrowLeft') nextImage();
+            if (e.key === 'ArrowRight') prevImage();
+        });
+    </script>
 </body>
 </html>
